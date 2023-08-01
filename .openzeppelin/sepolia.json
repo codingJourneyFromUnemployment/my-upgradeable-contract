@@ -19,6 +19,11 @@
       "address": "0x89Faee64fCd1c03EE3DF18df1456E58D170ae644",
       "txHash": "0x079d3f280bfe98d277d9f6ab8f444bd08fd7f6da9229f696d9387f09e738449f",
       "kind": "transparent"
+    },
+    {
+      "address": "0x533307d721202BA0c00300dCd9083Dd30C46ebBB",
+      "txHash": "0xb3ea7e7b228eac4ffaed20619c8b7f8ae2df74951b987480a9a6d14cf6a2a760",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -60,6 +65,66 @@
             "type": "t_address",
             "contract": "VendingMachineV1",
             "src": "contracts/VendingMachineV1.sol:10"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "f67c94113779c3b435708e8be226144811280740f7b09dfd8031d50448139875": {
+      "address": "0x5AeA2cAe798A85be7CE3c9D6d7617AEacfD05359",
+      "txHash": "0xa80b0f58e8edf4ced35edd86c2f23e54ce34484a76e10004d42691fcb53752d7",
+      "layout": {
+        "solcVersion": "0.8.4",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "numSodas",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "VendingMachineV2",
+            "src": "contracts/VendingMachineV2.sol:9"
+          },
+          {
+            "label": "owner",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "VendingMachineV2",
+            "src": "contracts/VendingMachineV2.sol:10"
           }
         ],
         "types": {

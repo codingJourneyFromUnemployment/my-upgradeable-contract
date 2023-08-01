@@ -3,7 +3,7 @@ const hre = require('hardhat');
 require('dotenv').config();
 
 // TO DO: Place the address of your proxy here!
-const proxyAddress = hre.network.config.proxyAddress;
+const proxyAddress = hre.network.config.proxyAddress[0];
 
 async function main() {
   console.log(`upgrading proxy at ${proxyAddress}, network: ${hre.network.name}`);
@@ -11,7 +11,7 @@ async function main() {
   const deployer = signers[0];
 
   const VendingMachineV2 = await ethers.getContractFactory('VendingMachineV2', deployer);
-  const upgraded = await upgrades.upgradeProxy(proxyAddress, VendingMachineV2);
+  const vendingMachineV2 = await upgrades.upgradeProxy(proxyAddress, VendingMachineV2);
 
   let implementationAddress;
   console.log('Waiting for implementation address...');
@@ -27,7 +27,8 @@ async function main() {
       }
   }
 
-  console.log("The current contract owner is: " + upgraded.owner());
+  const owner = await vendingMachineV2.owner();
+  console.log("The current contract owner is: " + owner);
   console.log('Implementation contract address: ' + implementationAddress);
 }
 
