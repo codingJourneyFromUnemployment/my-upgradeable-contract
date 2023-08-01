@@ -1,6 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 require('dotenv').config();
 require('@openzeppelin/hardhat-upgrades');
+require("@nomicfoundation/hardhat-verify");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -10,6 +11,7 @@ module.exports = {
       url:process.env.SEPOLIA_RPC_URL, 
       accounts: [process.env.PRIVATE_KEY],
       chainId: 11155111, 
+      proxyAddress: [process.env.PROXY_ADDRESS_SEPOLIA]
     },
     goerli: {
       url:process.env.GOERLI_RPC_URL,
@@ -20,7 +22,7 @@ module.exports = {
     localhost: {
       url: "http://127.0.0.1:8545/",
       chainId: 31337,
-      constructorArgs: [process.env.EmitWinner_Local_Address]
+      proxyAddress: [process.env.PROXY_ADDRESS_LOCALHOST]
     }
   },
   etherscan: {

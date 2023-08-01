@@ -9,6 +9,16 @@
       "address": "0x783f6b991C63De4B26dC3468897D7bAAa2f279Aa",
       "txHash": "0x3a31e5e3850d590fd8e4e36119372bdf842a40af81593ef5febafb79ce678c1e",
       "kind": "transparent"
+    },
+    {
+      "address": "0x8E96bB37BDD7d195fD637Ecb7cA2a9560754B203",
+      "txHash": "0x45df10180893d234efc9f818b3219091e94dcc2983ed8bd176ca3bafcd7175f0",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x89Faee64fCd1c03EE3DF18df1456E58D170ae644",
+      "txHash": "0x079d3f280bfe98d277d9f6ab8f444bd08fd7f6da9229f696d9387f09e738449f",
+      "kind": "transparent"
     }
   ],
   "impls": {

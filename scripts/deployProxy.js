@@ -15,9 +15,20 @@ async function main() {
     const proxy = await upgrades.deployProxy(VendingMachineV1, [100]);
 
     const proxyAddress = await proxy.getAddress();
-    const implementationAddress = await upgrades.erc1967.getImplementationAddress(
-      proxyAddress
-    );
+
+    let implementationAddress;
+    console.log('Waiting for implementation address...');
+    for(let attempts = 0; attempts < 100; attempts++){
+        try {
+            implementationAddress = await upgrades.erc1967.getImplementationAddress(
+                proxyAddress
+            );
+            break;
+        } catch (e) {
+            console.log('This is attempt #' + attempts);
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+    }
 
     console.log('Proxy contract address: ' + proxyAddress);
 
