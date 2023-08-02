@@ -4,7 +4,7 @@ require('@openzeppelin/hardhat-upgrades');
 require("@nomicfoundation/hardhat-verify");
 
 const { ProxyAgent, setGlobalDispatcher } = require("undici");
-const proxyAgent = new ProxyAgent("http://172.31.160.1:10811");
+const proxyAgent = new ProxyAgent(process.env.PROXY_AGENT);
 setGlobalDispatcher(proxyAgent);
 
 /** @type import('hardhat/config').HardhatUserConfig */
